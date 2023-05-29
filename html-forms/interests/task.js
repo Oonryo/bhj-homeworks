@@ -57,8 +57,6 @@ class Interests {
 		});
 	}
 
-	// Это для поиска всех дочерних элементов и установки их в соотвктсвующее состояние. Затем вызывается ...
-
 	updateParents(parent) {
 		let parentCheckbox = this.getParent(parent);
 		while (parentCheckbox) {
@@ -69,7 +67,6 @@ class Interests {
 			parentCheckbox = this.getParent(parentCheckbox);
 		}
 	}
-	// ... тем самым обновляя состояние родительских боксов. Так же получат чекбокс родительского узла и обновляет состояние его детей. свойство `indeterminate` - если некоторые из дочерних элементов выбраны, родительский тоже частично выбран 
 
 	getChildren(el) {
 		el = el.closest('li');
@@ -82,7 +79,6 @@ class Interests {
 		el = el && el.closest('ul').closest('li');
 		return el && el.querySelector('input[type="checkbox"]');
 	}
-	// метод get получают соотвествующие элементы списка для установки связи между чекбоксами
 }
 
 const interests = new Interests({
